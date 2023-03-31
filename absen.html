@@ -21,21 +21,20 @@
 		<div id="map"></div>
 		
 		<div class="text-center">
-			<a href="#" id="tombol_masuk" class="btn btn-block btn-primary">Absen Masuk</a>
-			<a href="#" id="tombol_pulang" class="btn btn-block btn-warning">Absen Pulang</a>
+			<a href="#" id="tombol_masuk" class="btn btn-block btn-primary" onclick="proses_masuk()">Absen Masuk</a>
+			<a href="#" id="tombol_pulang" class="btn btn-block btn-warning" onclick="proses_pulang()">Absen Pulang</a>
 		</div>
 		
 		<audio id="notifikasi_in">
-			<source src="audio/absen_masuk.mp3'" type="audio/mpeg">
+			<source src="audio/absen_masuk.mp3" type="audio/mpeg">
 		</audio>
 
 		<audio id="notifikasi_out">
-			<source src="audio/absen_pulang.mp3'" type="audio/mpeg">
+			<source src="audio/absen_pulang.mp3" type="audio/mpeg">
 		</audio>
 
 		<nav class="navbar navbar-dark bg-info navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none">
-			<ul class="navbar-nav nav-justified w-100">
-			dsssdsdsd	
+			<ul class="navbar-nav nav-justified w-100">	
 				
 			  <li class="nav-item">
 				<a href="home.html" class="nav-link">
@@ -67,6 +66,17 @@
 		  </nav>
 		  
 		<script>
+			var notifikasi_in = document.getElementById("notifikasi_in");
+			var notifikasi_out = document.getElementById("notifikasi_out");
+
+			function proses_masuk(){
+				notifikasi_in.play();
+			}
+
+			function proses_pulang(){
+				notifikasi_out.play();
+			}
+
 			//Menampilkan Kamera
 			Webcam.set({
 				width: 600,
